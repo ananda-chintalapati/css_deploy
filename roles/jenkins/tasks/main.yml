@@ -1,0 +1,12 @@
+---
+ - name: clone jenkins docker url
+   git: repo={{ dockerfile_url }} dest={{ docker_path }}
+
+ - name: jenkins container
+   docker:
+    name: jenkins
+    image: jenkinsci/jenkins
+    state: started
+    expose:
+      - 8080
+      - 50000

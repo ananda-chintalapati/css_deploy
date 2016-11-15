@@ -1,0 +1,11 @@
+---
+ - name: influx container
+   docker:
+    name: influxdb
+    image: influxdb
+    state: started
+    expose:
+      - 8083
+      - 8086
+    volumes:
+      - influxdb:/var/lib/influxdb

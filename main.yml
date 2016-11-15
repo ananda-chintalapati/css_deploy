@@ -1,0 +1,41 @@
+---
+  - hosts: all
+    roles:
+      - role: common
+
+  - hosts: k8-worker
+    roles:
+      - role: kubernetes
+        kubernetes_node_type: worker
+
+  - hosts: k8-admin
+    roles:
+      - role: kubernetes
+        kubernetes_node_type: admin
+
+  - hosts: k8-master
+    roles:
+      - role: kubernetes
+        kubernetes_node_type: master
+
+  - hosts: all
+    roles:
+      - role: docker
+        become: true
+
+  - hosts: node1
+    roles:
+      - role: jenkins
+
+  - hosts: node1
+    roles:
+      - role: grafana
+
+  - hosts: node1
+    roles:
+      - role: elk
+
+  - hosts: node1
+    roles:
+      - role: influx
+

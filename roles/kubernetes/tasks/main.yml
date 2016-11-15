@@ -1,0 +1,23 @@
+---
+  - hosts: all
+    roles:
+       - role: common
+
+  - hosts: k8-worker
+    roles:
+       - role: kubernetes
+         kubernetes_node_type: worker
+
+  - hosts: k8-admin
+    roles:
+       - role: kubernetes
+         kubernetes_node_type: admin
+
+  - hosts: k8-master
+    roles:
+       - role: kubernetes
+         kubernetes_node_type: master
+
+  - hosts: docker
+    roles:
+       - role: docker

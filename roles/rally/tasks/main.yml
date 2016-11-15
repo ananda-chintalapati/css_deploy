@@ -1,0 +1,7 @@
+---
+
+ - name: rally container
+   docker:
+    name: rally
+    image: rallyforge/rally
+    state: started

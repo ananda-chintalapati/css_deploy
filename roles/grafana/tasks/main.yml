@@ -1,0 +1,10 @@
+---
+ - name: grafana container
+   docker:
+    name: grafana
+    image: grafana/grafana
+    state: started
+    expose:
+      - 3000
+    volumes:
+      - /var/lib/grafana:/var/lib/grafana

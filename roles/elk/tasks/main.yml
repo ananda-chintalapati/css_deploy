@@ -1,0 +1,9 @@
+---
+ - name: ELK container
+   docker:
+    name: elk
+    image: nshou/elasticsearch-kibana
+    state: started
+    expose:
+      - 9200
+      - 5601

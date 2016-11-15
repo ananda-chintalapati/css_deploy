@@ -1,0 +1,12 @@
+[k8-master]
+localhost
+
+[k8-admin]
+localhost
+
+[k8-worker]
+192.168.9.4
+192.168.9.5
+
+[node1]
+192.168.9.4
